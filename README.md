@@ -1,46 +1,57 @@
-# Tetris2048-Game 🎮
+# Tetris 2048 (Tetris2048-Game)
 
-**Tetris2048-Game** is a hybrid game that combines the falling-block mechanics of **Tetris** with the merging-number gameplay of **2048**.
+A hybrid puzzle game that blends **Tetris**-style falling tetrominoes with **2048**-style number merging.
 
-> Built with **Python**, **Pygame**, and a lightweight drawing utility (`lib/stddraw.py`).
-
----
-
-## ✨ Features
-
-- Classic **Tetris** movement and rotation
-- **Hard drop** support (spacebar)
-- 2048-style **merge mechanics** (equal numbers combine)
-- Score system based on merges and cleared rows
-- Next-piece preview panel
-- Pause menu + restart option
-- Win condition when reaching **2048 tile**
+Built with **Python 3.10**, **Pygame**, and a small drawing utility (`lib/stddraw.py`).
 
 ---
 
-## 🕹️ Controls
+## Highlights
+
+- Tetris movement, rotation, and **hard drop**
+- 2048 merge mechanic (**equal tiles combine and double**)
+- Scoring based on merges and cleared lines
+- **Next piece** preview panel
+- Pause screen + restart
+- Win condition when reaching a **2048** tile
+
+---
+
+## Controls
 
 | Key | Action |
-|-----|--------|
-| ← / → | Move piece left/right |
-| ↓ | Move down (soft drop) |
-| ↑ | Rotate piece |
+|---|---|
+| Left / Right | Move tetromino |
+| Down | Soft drop |
+| Up | Rotate |
 | Space | Hard drop |
-| P | Pause / Resume |
-| R | Restart (only while paused) |
+| P | Pause / resume |
+| R | Restart (while paused) |
 
 ---
 
-## 🚀 Getting Started
+## Screenshots
 
-### 1) Clone the repository
+### Main Menu
+
+![Main Menu](images/menu_image.png)
+
+### Pause Screen
+
+![Pause Screen](images/pause_image.png)
+
+---
+
+## Quickstart
+
+### 1) Clone
 
 ```bash
 git clone https://github.com/alirkal34-jpg/Tetris2048-Game.git
 cd Tetris2048-Game
 ```
 
-### 2) Create and activate a virtual environment (recommended)
+### 2) Create a virtual environment (recommended)
 
 ```bash
 python -m venv .venv
@@ -56,7 +67,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4) Run the game
+### 4) Run
 
 ```bash
 python Tetris_2048.py
@@ -64,64 +75,48 @@ python Tetris_2048.py
 
 ---
 
-## 📦 Dependencies
+## Tech Stack
 
-- Python 3.8+
-- pygame
-- numpy
+- **Python 3.10**
+- **Pygame** (rendering + input)
+- **NumPy** (matrix operations)
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 Tetris2048-Game/
-│
-├── Tetris_2048.py          # Main game loop + UI screens
-├── game_grid.py            # Grid logic, merges, scoring, clearing rows
+├── Tetris_2048.py          # Main loop + UI screens (menu/pause/end)
+├── game_grid.py            # Grid state, merges, scoring, line clearing
 ├── tetromino.py            # Tetromino shapes, movement, rotation
 ├── tile.py                 # Tile values + rendering
-├── point.py                # Simple Point helper
-│
+├── point.py                # Point helper
 ├── lib/                    # Drawing & graphics helpers
 │   ├── stddraw.py
 │   ├── picture.py
 │   └── color.py
-│
-├── images/                 # Menu + pause images
-└── .vscode/                # VSCode settings
+└── images/                 # Menu/pause images used by the UI
 ```
 
 ---
 
-## ✅ Quality Notes
+## Notes on Implementation
 
-This project demonstrates:
-
-- Object-oriented design
-- Separation of concerns (grid, tile, tetromino, UI)
-- Clean modular structure
-- Readable code and documentation
+- The game grid is stored as a matrix (`tile_matrix`) and updated when a tetromino locks.
+- After locking, the grid processes merges and applies gravity-like dropping.
+- Clearing full lines and removing disconnected (“floating”) tiles contributes to score.
 
 ---
 
-## 📄 License
+## License
 
-This project is licensed under the **MIT License**.
-
-See the [LICENSE](LICENSE) file for details.
+MIT License. See `LICENSE` for details.
 
 ---
 
-## 🙌 Acknowledgements
-
-- Inspired by **Tetris** (falling-block puzzle classic)
-- Inspired by **2048** (number merging puzzle)
-
----
-
-## 👤 Author
+## Author
 
 Developed by **alirkal34-jpg**.
 
-If you'd like to collaborate or provide feedback, feel free to open an issue or pull request.
+If you’d like to suggest improvements, feel free to open an issue or a pull request.
