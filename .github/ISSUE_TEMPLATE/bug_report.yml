@@ -1,0 +1,41 @@
+name: "Bug report"
+description: "Report a reproducible bug"
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve T2048 Nexus.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Bug summary
+      description: What happened?
+      placeholder: Clear and concise bug description
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Start game
+        2. Press ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python version, dependency versions
+      placeholder: Windows 11 / Python 3.11 / pygame 2.x
+    validations:
+      required: true
